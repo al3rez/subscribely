@@ -14,10 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-      </style>
+      <style></style>
 
       <body className={inter.className}>
         {children} <SpeedInsights />
