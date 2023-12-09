@@ -28,6 +28,7 @@ export const Header = ({ className }) => {
           className="!flex-[0_0_auto]"
           property1="primary"
           text="Submit Website"
+          link="https://dqeweieu0xx.typeform.com/to/gIUWPCEH"
         />
         <Button className="!flex-[0_0_auto]" property1="secondary" />
         <button className="px-[14px] py-[10px] inline-flex h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border">

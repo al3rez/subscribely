@@ -5,13 +5,19 @@ import { useReducer } from "react";
 import { EnvelopeSimpleFill2 } from "../../icons/EnvelopeSimpleFill2";
 import { PlusCircleFill2 } from "../../icons/PlusCircleFill2";
 
-export const Button = ({ property1, className, text = "Submit Tool" }) => {
+export const Button = ({
+  property1,
+  className,
+  text = "Submit Tool",
+  link,
+}) => {
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "primary",
   });
 
   return (
-    <div
+    <a
+      href={link}
       className={`inline-flex items-center gap-[6px] h-[44px] rounded-[500px] justify-center relative cursor-pointer ${
         state.property1 === "primary-hovered"
           ? "[background:linear-gradient(180deg,rgb(236.95,113.03,255)_0%,rgb(0,140,255)_100%)]"
@@ -70,7 +76,7 @@ export const Button = ({ property1, className, text = "Submit Tool" }) => {
           <>Subscribe</>
         )}
       </div>
-    </div>
+    </a>
   );
 };
 
