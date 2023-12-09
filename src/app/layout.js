@@ -5,8 +5,6 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
 });
 
 export const metadata = {
@@ -17,8 +15,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>
+    <html lang="en" style={inter.style}>
+      <body>
         {children} <SpeedInsights />
         <Analytics />
       </body>

@@ -45,14 +45,14 @@ export const Search = ({ property1, className }) => {
     >
       <Search1 className="!relative !w-[20px] !h-[20px]" color="white" />
       {["default", "hovered"].includes(state.property1) && (
-        <div className="[font-family:'Inter',Helvetica] w-fit tracking-[0] text-[15px] text-gray-4 font-normal leading-[normal] whitespace-nowrap relative">
+        <div className="w-fit tracking-[0] text-[15px] text-gray-4 font-normal leading-[normal] whitespace-nowrap relative">
           Search
         </div>
       )}
 
       {state.property1 === "focused" && (
         <>
-          <p className="relative flex-1 mt-[-0.50px] [font-family:'Inter',Helvetica] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]">
+          <p className="relative flex-1 mt-[-0.50px] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]">
             <span className="font-medium text-[#ffffff]">Flow</span>
             <span className="font-bold text-[#008cff]">|</span>
           </p>

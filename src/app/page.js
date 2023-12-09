@@ -5,6 +5,11 @@ import { Tab } from "./components/Tab";
 import { CodeFill } from "./icons/CodeFill";
 import { MegaphoneSimpleFill } from "./icons/MegaphoneSimpleFill";
 import { sql } from "@vercel/postgres";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+});
+
 
 export const dynamic = "force-dynamic";
 export default async function Home() {
@@ -25,23 +30,23 @@ export default async function Home() {
   };
 
   return (
-    <div>
+    <div className={inter.className}>
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
       <main className="w-[1345px] mt-[44px] mx-auto">
-        <p className="[font-family:'Inter',Helvetica] font-bold text-[#ffffff] text-[36px] tracking-[0] leading-[normal]">
+        <p className="font-bold text-[#ffffff] text-[36px] tracking-[0] leading-[normal]">
           👉 Fantastic Productized Services
         </p>
         <div className="w-[1300px] mt-[13px] mx-auto">
-          <p className=" w-[668px] top-[170px] left-[310px] [font-family:'Inter',Helvetica] font-normal text-gray-4 text-[20px] tracking-[0] leading-[30px]">
+          <p className="w-[668px] top-[170px] left-[310px] font-normal text-gray-4 text-[20px] tracking-[0] leading-[30px]">
             Carefully selected productized services ideal for agencies,
             startups, and entrepreneurs. Handpicked and managed by actual
             humans!
           </p>
-          <div className="mt-[47px] [font-family:'Inter',Helvetica] font-medium text-gray-4 text-[16px] tracking-[0] leading-[normal]">
+          <div className="mt-[47px] font-medium text-gray-4 text-[16px] tracking-[0] leading-[normal]">
             Choose a category
           </div>
           <div className="flex items-center justify-between mt-[16px]">
-            <div className="flex gap-[10px]">
+            <div className={`flex gap-[10px] ${inter.className}`}>
               <Tab
                 className="!flex-[0_0_auto]"
                 divClassName="!mt-[-1.00px]"
@@ -85,7 +90,7 @@ export default async function Home() {
                     </div>
                     <div>
                       <div class="font-bold text-lg">{row.title}</div>
-                      <div class="w-[218px] text-neutral-500 text-base font-normal --font-inter line-clamp-3">
+                      <div class="w-[218px] text-neutral-500 text-base font-normal line-clamp-3">
                         {row.description}
                       </div>
                     </div>
@@ -98,7 +103,7 @@ export default async function Home() {
                     <span
                       class={`${
                         colors[row.tag].fg
-                      } text-sm font-normal --font-inter`}
+                      } text-sm font-normal`}
                     >
                       {row.tag.charAt(0).toUpperCase() + row.tag.slice(1)}
                     </span>

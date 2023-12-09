@@ -5,6 +5,12 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React from "react";
 import { Logo } from "../Logo";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
 
 export const PropertyDefault = ({
   tagPropertyNewClassName,
@@ -16,18 +22,18 @@ export const PropertyDefault = ({
   description = "Overcome the content chaos that keeps you from growing",
 }) => {
   return (
-    <a className="flex bg-gray-2 rounded-[15px]">
+    <a className="flex bg-gray-2 rounded-[15px]" style={inter.className}>
       <div className="flex ml-[22px] mt-[22px]">
         <div className="flex-none mr-3 rounded-none w-16 h-16 overflow-hidden">
           <img src={logoUrl} className="w-16 h-16" />
         </div>
         <div className="flex-grow">
           <div className="flex items-center justify-between">
-            <div class="text-white text-lg font-semibold --font-inter">
+            <div class="text-white text-lg font-semibold" style={inter.className}>
               {text}
             </div>{" "}
           </div>
-          <p className="max-w-[218px] text-neutral-500 text-base font-normal --font-inter mt-[7px] pb-[24px] leading-5">
+          <p className="max-w-[218px] text-neutral-500 text-base font-normal mt-[7px] pb-[24px] leading-5" style={inter.className}>
             Overcome the content chaos that keeps you from growing
           </p>
           <div
@@ -40,7 +46,7 @@ export const PropertyDefault = ({
             } ${tagPropertyNewClassName}`}
           >
             <div
-              className={`[font-family:'Inter',Helvetica] w-fit mt-[-1.00px] tracking-[0] text-[14px] relative font-normal leading-[normal] ${
+              className={`w-fit mt-[-1.00px] tracking-[0] text-[14px] relative font-normal leading-[normal] ${
                 tagProperty1 === "discount"
                   ? "text-[#ffd337]"
                   : tagProperty1 === "ad"

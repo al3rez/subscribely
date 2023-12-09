@@ -14,12 +14,12 @@ export const Header = ({ className }) => {
       className={`flex items-center justify-between h-[70px] bg-gray-1 border-b [border-bottom-style:solid] border-[#262525] ${className}`}
     >
       <div className="flex">
-        <div className="absolute top-[18px] left-[75px] [font-family:'Inter',Helvetica] font-semibold text-[#ffffff] text-[24px] tracking-[0] leading-[normal]">
+        <div className="absolute top-[18px] left-[75px] font-semibold text-[#ffffff] text-[24px] tracking-[0] leading-[normal]">
           Subscribely.
         </div>
         <div className="absolute w-[42px] h-[40px] top-[14px] left-[24px]">
           <div className="relative w-[40px] h-[40px] bg-[#008cff] rounded-[8.79px]">
-            <div className="absolute w-[25px] top-[3px] left-[10px] [font-family:'Inter',Helvetica] font-bold text-[#ffffff] text-[28px] tracking-[-2.24px] leading-[normal]">
+            <div className="absolute w-[25px] top-[3px] left-[10px] font-bold text-[#ffffff] text-[28px] tracking-[-2.24px] leading-[normal]">
               S.
             </div>
           </div>
@@ -39,7 +39,7 @@ export const Header = ({ className }) => {
             alert("Opps! So lazy of me! I'm still working on Sign in.");
           }}
         >
-          <div className="relative w-fit [font-family:'Inter',Helvetica] font-semibold text-[#ffffff] text-[18px] tracking-[0] leading-[normal]">
+          <div className="relative w-fit font-semibold text-[#ffffff] text-[18px] tracking-[0] leading-[normal]">
             Sign in
           </div>
         </button>

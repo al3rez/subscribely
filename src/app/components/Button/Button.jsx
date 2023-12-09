@@ -62,7 +62,7 @@ export const Button = ({
       )}
 
       <div
-        className={`[font-family:'Inter',Helvetica] w-fit tracking-[0] text-[18px] relative font-semibold leading-[normal] ${
+        className={`w-fit tracking-[0] text-[18px] relative font-semibold leading-[normal] ${
           ["secondary-hovered", "secondary"].includes(state.property1)
             ? "text-white"
             : "text-bg"

@@ -10,7 +10,7 @@ export const Tab = ({
   visible = true,
   divClassName,
   text = "Design",
-  icon = <PenNibFill2 className="!relative !w-[20px] !h-[20px]" />,
+  icon = <PenNibFill2 className="!relative !w-[20px] !h-[20px]"/>,
 }) => {
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "default",
@@ -50,7 +50,7 @@ export const Tab = ({
       {visible && <>{icon}</>}
 
       <div
-        className={`[font-family:'Inter',Helvetica] w-fit mt-[-0.50px] tracking-[0] text-[16px] text-white relative font-semibold whitespace-nowrap leading-[normal] ${divClassName}`}
+        className={`w-fit mt-[-0.50px] tracking-[0] text-[16px] text-white relative font-semibold whitespace-nowrap leading-[normal] ${divClassName}`}
       >
         {text}
       </div>
