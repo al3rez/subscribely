@@ -93,7 +93,7 @@ export default async function Home() {
                     </div>
                     <div>
                       <div class="font-bold text-lg">{row.title}</div>
-                      <div class="w-full text-neutral-500 font-normal line-clamp-3">
+                      <div class="w-full md:w-[218px] text-neutral-500 font-normal line-clamp-3">
                         {row.description}
                       </div>
                     </div>
