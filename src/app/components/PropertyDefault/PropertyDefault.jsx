@@ -32,7 +32,7 @@ export const PropertyDefault = ({
         image={logoUrl}
         imageClassName="!h-[60px] !w-[60px]"
         overlapGroupClassName="!h-[60px]"
-        property1={logoProperty1}
+        property1="one"
         rectangleClassName="!h-[55px] !left-px !w-[57px] !top-[2px]"
       />
     </div>
