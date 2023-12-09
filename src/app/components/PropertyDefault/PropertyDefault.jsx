@@ -5,7 +5,6 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 
 import React from "react";
 import { Logo } from "../Logo";
-import { Tag } from "../Tag";
 
 export const PropertyDefault = ({
   tagPropertyNewClassName,
