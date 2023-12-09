@@ -10,7 +10,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-
 export const dynamic = "force-dynamic";
 export default async function Home() {
   const { rows } = await sql`SELECT * FROM listings order by id asc`;
@@ -32,12 +31,12 @@ export default async function Home() {
   return (
     <div className={inter.className}>
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
-      <main className="w-[1345px] mt-[44px] mx-auto">
-        <p className="font-bold text-[#ffffff] text-[36px] tracking-[0] leading-[normal]">
+      <main className="w-[80%] mt-[44px] mx-auto">
+        <h1 className="font-bold text-white text-[2rem] tracking-normal leading-normal">
           👉 Fantastic Productized Services
-        </p>
-        <div className="w-[1300px] mt-[13px] mx-auto">
-          <p className="w-[668px] top-[170px] left-[310px] font-normal text-gray-4 text-[20px] tracking-[0] leading-[30px]">
+        </h1>
+        <div className="w-[100%] mt-[13px] mx-auto">
+          <p className="w-[100%] left-[310px] font-normal text-gray-4  text-[1.2rem] tracking-[0] leading-[30px] md:text-[1.5rem] md:w-[664px] break-words">
             Carefully selected productized services ideal for agencies,
             startups, and entrepreneurs. Handpicked and managed by actual
             humans!
@@ -56,17 +55,20 @@ export default async function Home() {
               />
               <Tab
                 className="!flex-[0_0_auto]"
+                divClassName="hidden md:inline-flex"
                 property1="default"
                 text="Design"
               />
               <Tab
                 className="!flex-[0_0_auto]"
+                divClassName="hidden md:inline-flex"
                 icon={<CodeFill className="!relative !w-[20px] !h-[20px]" />}
                 property1="default"
                 text="Development"
               />
               <Tab
                 className="!flex-[0_0_auto]"
+                divClassName="hidden md:inline-flex"
                 icon={
                   <MegaphoneSimpleFill className="!relative !w-[20px] !h-[20px]" />
                 }
@@ -76,7 +78,7 @@ export default async function Home() {
             </div>
             <Search property1="default" />
           </div>
-          <div className="grid grid-cols-3 items-start gap-[20px_24px] mt-[28px]">
+          <div className="grid grid-cols-1 xl:grid-cols-3 items-start gap-[20px_24px] mt-[28px]">
             {rows.map((row) => (
               <a
                 class="p-4 bg-gray-2 rounded-[15px] text-white flex flex-col justify-between h-full cusror-pointer hover:bg-gray-3 transition-all"
@@ -100,11 +102,7 @@ export default async function Home() {
                       colors[row.tag].bg
                     } bg-opacity-10 rounded-md text-xs font-semibold px-2 py-1 text-white self-start`}
                   >
-                    <span
-                      class={`${
-                        colors[row.tag].fg
-                      } text-sm font-normal`}
-                    >
+                    <span class={`${colors[row.tag].fg} text-sm font-normal`}>
                       {row.tag.charAt(0).toUpperCase() + row.tag.slice(1)}
                     </span>
                   </div>

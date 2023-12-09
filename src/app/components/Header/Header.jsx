@@ -14,7 +14,7 @@ export const Header = ({ className }) => {
       className={`flex items-center justify-between h-[70px] bg-gray-1 border-b [border-bottom-style:solid] border-[#262525] ${className}`}
     >
       <div className="flex">
-        <div className="absolute top-[18px] left-[75px] font-semibold text-[#ffffff] text-[24px] tracking-[0] leading-[normal]">
+        <div className="absolute top-[18px] left-[75px] font-semibold text-[#ffffff] text-[24px] tracking-[0] leading-[normal] md:block hidden">
           Subscribely.
         </div>
         <div className="absolute w-[42px] h-[40px] top-[14px] left-[24px]">
@@ -32,9 +32,12 @@ export const Header = ({ className }) => {
           text="Submit Website"
           link="https://dqeweieu0xx.typeform.com/to/gIUWPCEH"
         />
-        <Button className="!flex-[0_0_auto]" property1="secondary" />
+        <Button
+          className="md:inline-flex hidden !flex-[0_0_auto]"
+          property1="secondary"
+        />
         <button
-          className="px-[14px] py-[10px] inline-flex h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border cursor-pointer"
+          className="md:inline-flex hidden px-[14px] py-[10px] inline-flex h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border cursor-pointer"
           onClick={function () {
             alert("Opps! So lazy of me! I'm still working on Sign in.");
           }}
