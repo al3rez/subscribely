@@ -33,7 +33,8 @@ export default async function Home() {
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
       <main className="w-[80%] mt-[44px] mx-auto">
         <h1 className="font-bold text-white text-[2rem] tracking-normal leading-normal">
-          👉 Fantastic Productized Services
+          <span className="hidden md:block ">👉</span> Fantastic Productized
+          Services
         </h1>
         <div className="w-[100%] mt-[13px] mx-auto">
           <p className="w-[100%] left-[310px] font-normal text-gray-4  text-[1.2rem] tracking-[0] leading-[30px] md:text-[1.5rem] md:w-[664px] break-words">
@@ -44,7 +45,7 @@ export default async function Home() {
           <div className="mt-[47px] font-medium text-gray-4 text-[16px] tracking-[0] leading-[normal]">
             Choose a category
           </div>
-          <div className="flex items-center justify-between mt-[16px]">
+          <div className="flex items-center justify-between gap-[10px] mt-[16px]">
             <div className={`flex gap-[10px] ${inter.className}`}>
               <Tab
                 className="!flex-[0_0_auto]"
@@ -76,9 +77,9 @@ export default async function Home() {
                 text="Sales and Marketing"
               />
             </div>
-            <Search property1="default" />
+            <Search className="hidden md:block" property1="default" />
           </div>
-          <div className="grid grid-cols-1 xl:grid-cols-3 items-start gap-[20px_24px] mt-[28px]">
+          <div className="grid grid-cols-1 2xl:grid-cols-3 items-start gap-[20px_24px] mt-[28px]">
             {rows.map((row) => (
               <a
                 class="p-4 bg-gray-2 rounded-[15px] text-white flex flex-col justify-between h-full cusror-pointer hover:bg-gray-3 transition-all"
@@ -92,7 +93,7 @@ export default async function Home() {
                     </div>
                     <div>
                       <div class="font-bold text-lg">{row.title}</div>
-                      <div class="w-[218px] text-neutral-500 text-base font-normal line-clamp-3">
+                      <div class="w-full text-neutral-500 font-normal line-clamp-3">
                         {row.description}
                       </div>
                     </div>
