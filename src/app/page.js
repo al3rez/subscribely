@@ -64,6 +64,7 @@ export default async function Home() {
                   tagProperty1={row.tag}
                   tagPropertyNewClassName="!left-[275px]  !top-0"
                   text={row.title}
+                  description={row.description}
                 />
               </div>
             ))}
