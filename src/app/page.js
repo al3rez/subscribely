@@ -33,8 +33,8 @@ export default async function Home() {
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
       <main className="w-[80%] mt-[44px] mx-auto">
         <h1 className="font-bold text-white text-[2rem] tracking-normal leading-normal">
-          <span className="hidden md:block ">👉</span> Fantastic Productized
-          Services
+          <span className="hidden md:block">👉 </span> Fantastic
+          ProductizedServices
         </h1>
         <div className="w-[100%] mt-[13px] mx-auto">
           <p className="w-[100%] left-[310px] font-normal text-gray-4  text-[1.2rem] tracking-[0] leading-[30px] md:text-[1.5rem] md:w-[664px] break-words">
@@ -77,7 +77,7 @@ export default async function Home() {
                 text="Sales and Marketing"
               />
             </div>
-            <Search className="hidden md:block" property1="default" />
+            <Search className="hidden md:inline-flex" property1="default" />
           </div>
           <div className="grid grid-cols-1 2xl:grid-cols-3 items-start gap-[20px_24px] mt-[28px]">
             {rows.map((row) => (
