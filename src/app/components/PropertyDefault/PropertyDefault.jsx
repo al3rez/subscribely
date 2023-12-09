@@ -13,6 +13,7 @@ export const PropertyDefault = ({
   text = "StoryChief",
   logoPropertyClassName,
   logoProperty1 = "one",
+  logoUrl = "https://c.animaapp.com/NrX3HX2r/img/image-3-2@2x.png",
   description = "StoryChief puts everything you need to get your content marketing done in one place. Organise, structure & publish your content multi-channel.",
 }) => {
   return (
@@ -28,7 +29,7 @@ export const PropertyDefault = ({
       </p>
       <Logo
         className={logoPropertyClassName}
-        image="https://c.animaapp.com/NrX3HX2r/img/image-3-2@2x.png"
+        image={logoUrl}
         imageClassName="!h-[60px] !w-[60px]"
         overlapGroupClassName="!h-[60px]"
         property1={logoProperty1}

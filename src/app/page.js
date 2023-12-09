@@ -60,7 +60,8 @@ export default async function Home() {
               <div key={row.id}>
                 <PropertyDefault
                   logoProperty1="two"
-                  logoPropertyClassName={`relative !h-[60px] rounded-[22.5%] bg-[url(${row.logo_url})]  !left-[22px] !w-[60px] !top-[22px]`}
+                  logoUrl={row.logo_url}
+                  logoPropertyClassName={`relative !h-[60px] rounded-[22.5%] !left-[22px] !w-[60px] !top-[22px]`}
                   tagProperty1={row.tag}
                   tagPropertyNewClassName="!left-[275px]  !top-0"
                   text={row.title}
