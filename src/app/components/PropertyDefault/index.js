@@ -1,0 +1,1 @@
+export { PropertyDefault } from "./PropertyDefault";
