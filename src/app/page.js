@@ -80,7 +80,7 @@ export default async function Home() {
                 <div class="flex justify-between items-start">
                   <div class="flex items-center">
                     <div class="self-start mr-3 rounded-none w-16 h-16 overflow-hidden">
-                      <img src={row.logo_url} className="w-16 h-16" />
+                      <img src={row.logo_url} />
                     </div>
                     <div>
                       <div class="font-bold text-lg">{row.title}</div>

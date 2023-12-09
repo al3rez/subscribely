@@ -3,6 +3,8 @@ We're constantly improving the code you see.
 Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
 */
 
+"use client";
+
 import React from "react";
 import { Button } from "../Button";
 
@@ -31,7 +33,12 @@ export const Header = ({ className }) => {
           link="https://dqeweieu0xx.typeform.com/to/gIUWPCEH"
         />
         <Button className="!flex-[0_0_auto]" property1="secondary" />
-        <button className="px-[14px] py-[10px] inline-flex h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border">
+        <button
+          className="px-[14px] py-[10px] inline-flex h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border cursor-pointer"
+          onClick={function () {
+            alert("Opps! So lazy of me! I'm still working on Sign in.");
+          }}
+        >
           <div className="relative w-fit [font-family:'Inter',Helvetica] font-semibold text-[#ffffff] text-[18px] tracking-[0] leading-[normal]">
             Sign in
           </div>
