@@ -6,6 +6,7 @@ import { CodeFill } from "./icons/CodeFill";
 import { MegaphoneSimpleFill } from "./icons/MegaphoneSimpleFill";
 import { sql } from "@vercel/postgres";
 
+export const dynamic = "force-dynamic";
 export default async function Home() {
   const { rows } = await sql`SELECT * FROM listings order by id asc`;
   const colors = {
