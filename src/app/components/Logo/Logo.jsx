@@ -31,7 +31,13 @@ export const Logo = ({
         property1 === "two"
           ? "bg-cover"
           : ""
-      } ${property1 === "seven" ? "h-[135px]" : property1 === "twelve" ? "h-[124px]" : "h-[128px]"} ${
+      } ${
+        property1 === "seven"
+          ? "h-[135px]"
+          : property1 === "twelve"
+          ? "h-[124px]"
+          : "h-[128px]"
+      } ${
         property1 === "two"
           ? "bg-[url(https://c.animaapp.com/NrX3HX2r/img/image-4-1@2x.png)]"
           : property1 === "three"
@@ -80,7 +86,7 @@ export const Logo = ({
       {property1 === "one" && (
         <div className={`relative h-[128px] ${overlapGroupClassName}`}>
           <div
-            className={`absolute w-[121px] h-[117px] top-[4px] left-[3px] bg-[#ffffff] rounded-[90px] ${rectangleClassName}`}
+            className={`w-[121px] h-[117px] top-[4px] left-[3px] bg-[#ffffff] rounded-[90px] ${rectangleClassName}`}
           />
           <img
             className={`absolute w-[128px] h-[128px] top-0 left-0 object-cover ${imageClassName}`}
