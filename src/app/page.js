@@ -74,7 +74,7 @@ export default async function Home() {
             {rows.map((row) => (
               <a
                 class="p-4 bg-gray-2 rounded-[15px] text-white flex flex-col justify-between h-full cusror-pointer hover:bg-gray-3 transition-all"
-                href="https://google.com"
+                href={row.link}
                 key={row.id}
               >
                 <div class="flex justify-between items-start">
