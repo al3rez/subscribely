@@ -85,7 +85,7 @@ export default async function Home() {
                     </div>
                     <div>
                       <div class="font-bold text-lg">{row.title}</div>
-                      <div class="w-[218px] text-neutral-500 text-base font-normal font-['Inter'] line-clamp-3">
+                      <div class="w-[218px] text-neutral-500 text-base font-normal --font-inter line-clamp-3">
                         {row.description}
                       </div>
                     </div>
@@ -98,7 +98,7 @@ export default async function Home() {
                     <span
                       class={`${
                         colors[row.tag].fg
-                      } text-sm font-normal font-['Inter']`}
+                      } text-sm font-normal --font-inter`}
                     >
                       {row.tag.charAt(0).toUpperCase() + row.tag.slice(1)}
                     </span>

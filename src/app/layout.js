@@ -1,9 +1,13 @@
 import { Inter } from "next/font/google";
-
-import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Subscribely",
@@ -14,9 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <style></style>
-
-      <body className={inter.className}>
+      <body className={inter.variable}>
         {children} <SpeedInsights />
         <Analytics />
       </body>

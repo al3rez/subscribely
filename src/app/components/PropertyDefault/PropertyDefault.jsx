@@ -23,11 +23,11 @@ export const PropertyDefault = ({
         </div>
         <div className="flex-grow">
           <div className="flex items-center justify-between">
-            <div class="text-white text-lg font-semibold font-['Inter']">
+            <div class="text-white text-lg font-semibold --font-inter">
               {text}
             </div>{" "}
           </div>
-          <p className="max-w-[218px] text-neutral-500 text-base font-normal font-['Inter'] mt-[7px] pb-[24px] leading-5">
+          <p className="max-w-[218px] text-neutral-500 text-base font-normal --font-inter mt-[7px] pb-[24px] leading-5">
             Overcome the content chaos that keeps you from growing
           </p>
           <div
