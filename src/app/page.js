@@ -1,33 +1,17 @@
-import { PropertyDefault } from "./components/PropertyDefault";
-import { Header } from "./components/Header";
-import { Search } from "./components/Search";
-import { Tab } from "./components/Tab";
-import { CodeFill } from "./icons/CodeFill";
-import { MegaphoneSimpleFill } from "./icons/MegaphoneSimpleFill";
-import { sql } from "@vercel/postgres";
+import { Header } from "@/components/client/Header";
+import { Search } from "@/components/client/Search";
+import { Tab } from "@/components/client/Tab";
+import { CodeFill } from "@/icons/CodeFill";
+import { MegaphoneSimpleFill } from "@/icons/MegaphoneSimpleFill";
+import { Listings } from "@/components/server/Listings";
+
 import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
 });
 
 export const dynamic = "force-dynamic";
-export default async function Home() {
-  const { rows } = await sql`SELECT * FROM listings order by id asc`;
-  const colors = {
-    ad: {
-      bg: "bg-bg",
-      fg: "text-white",
-    },
-    new: {
-      bg: "bg-green-400",
-      fg: "text-green-400",
-    },
-    discount: {
-      bg: "bg-yellow-300",
-      fg: "text-yellow-300",
-    },
-  };
-
+export default async function Home({ searchParams }) {
   return (
     <div className={inter.className}>
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
@@ -48,6 +32,7 @@ export default async function Home() {
           <div className="flex items-center justify-between gap-[10px] mt-[16px]">
             <div className={`flex gap-[10px] ${inter.className}`}>
               <Tab
+                isSelected={searchParams.category === "All"}
                 className="!flex-[0_0_auto]"
                 divClassName="!mt-[-1.00px]"
                 property1="selected"
@@ -55,12 +40,14 @@ export default async function Home() {
                 visible={false}
               />
               <Tab
+                isSelected={searchParams.category === "Design"}
                 className="!flex-[0_0_auto]"
                 divClassName="hidden md:inline-flex"
                 property1="default"
                 text="Design"
               />
               <Tab
+                isSelected={searchParams.category === "Development"}
                 className="!flex-[0_0_auto]"
                 divClassName="hidden md:inline-flex"
                 icon={<CodeFill className="!relative !w-[20px] !h-[20px]" />}
@@ -68,6 +55,7 @@ export default async function Home() {
                 text="Development"
               />
               <Tab
+                isSelected={searchParams.category === "Sales and Marketing"}
                 className="!flex-[0_0_auto]"
                 divClassName="hidden md:inline-flex"
                 icon={
@@ -79,38 +67,7 @@ export default async function Home() {
             </div>
             <Search className="hidden md:inline-flex" property1="default" />
           </div>
-          <div className="grid grid-cols-1 2xl:grid-cols-3 items-start gap-[20px_24px] mt-[28px]">
-            {rows.map((row) => (
-              <a
-                class="p-4 bg-gray-2 rounded-[15px] text-white flex flex-col justify-between h-full cusror-pointer hover:bg-gray-3 transition-all"
-                href={row.link}
-                key={row.id}
-              >
-                <div class="flex justify-between items-start">
-                  <div class="flex items-center">
-                    <div class="self-start mr-3 rounded-none w-16 h-16 overflow-hidden">
-                      <img src={row.logo_url} />
-                    </div>
-                    <div>
-                      <div class="font-bold text-lg">{row.title}</div>
-                      <div class="w-full md:w-[218px] text-neutral-500 font-normal line-clamp-3">
-                        {row.description}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class={`${
-                      colors[row.tag].bg
-                    } bg-opacity-10 rounded-md text-xs font-semibold px-2 py-1 text-white self-start`}
-                  >
-                    <span class={`${colors[row.tag].fg} text-sm font-normal`}>
-                      {row.tag.charAt(0).toUpperCase() + row.tag.slice(1)}
-                    </span>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
+          <Listings searchParams={searchParams}></Listings>
         </div>
       </main>
     </div>

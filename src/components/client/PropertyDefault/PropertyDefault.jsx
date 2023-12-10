@@ -11,7 +11,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-
 export const PropertyDefault = ({
   tagPropertyNewClassName,
   tagProperty1 = "new",
@@ -29,11 +28,17 @@ export const PropertyDefault = ({
         </div>
         <div className="flex-grow">
           <div className="flex items-center justify-between">
-            <div class="text-white text-lg font-semibold" style={inter.className}>
+            <div
+              class="text-white text-lg font-semibold"
+              style={inter.className}
+            >
               {text}
             </div>{" "}
           </div>
-          <p className="max-w-[218px] text-neutral-500 text-base font-normal mt-[7px] pb-[24px] leading-5" style={inter.className}>
+          <p
+            className="max-w-[218px] text-neutral-500 text-base font-normal mt-[7px] pb-[24px] leading-5"
+            style={inter.className}
+          >
             Overcome the content chaos that keeps you from growing
           </p>
           <div

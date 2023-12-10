@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useReducer } from "react";
-import { EnvelopeSimpleFill2 } from "../../icons/EnvelopeSimpleFill2";
-import { PlusCircleFill2 } from "../../icons/PlusCircleFill2";
+import { EnvelopeSimpleFill2 } from "../../../icons/EnvelopeSimpleFill2";
+import { PlusCircleFill2 } from "../../../icons/PlusCircleFill2";
 
 export const Button = ({
   property1,

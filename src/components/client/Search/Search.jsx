@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useReducer } from "react";
-import { Search1 } from "../../icons/Search1";
-import { X1 } from "../../icons/X1";
+import { Search1 } from "../../../icons/Search1";
+import { X1 } from "../../../icons/X1";
 
 export const Search = ({ property1, className }) => {
   const [state, dispatch] = useReducer(reducer, {
