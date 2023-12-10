@@ -1,1 +1,0 @@
-export { PropertyDefault } from "./PropertyDefault";
