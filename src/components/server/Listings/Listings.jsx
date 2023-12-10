@@ -32,7 +32,9 @@ export const Listings = async ({ searchParams }) => {
         >
           <div className="flex justify-between items-start">
             <div className="flex items-center">
-              <div className="self-start mr-3 rounded-none w-16 h-16 overflow-hidden">
+              <div
+                className={`self-start mr-3 ${row.logo_class} w-16 h-16 overflow-hidden`}
+              >
                 <img src={row.logo_url} />
               </div>
               <div>
