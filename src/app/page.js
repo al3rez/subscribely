@@ -32,7 +32,10 @@ export default async function Home({ searchParams }) {
           <div className="flex items-center justify-between gap-[10px] mt-[16px]">
             <div className={`flex gap-[10px] ${inter.className}`}>
               <Tab
-                isSelected={searchParams.category === "All"}
+                isSelected={
+                  searchParams.category === "All" ||
+                  searchParams.category == null
+                }
                 className="!flex-[0_0_auto]"
                 divClassName="!mt-[-1.00px]"
                 property1="selected"
