@@ -39,15 +39,12 @@ export const Header = ({ className }) => {
           text="Submit Website"
           link="https://dqeweieu0xx.typeform.com/to/gIUWPCEH"
         />
-        <Button
-          className="md:inline-flex hidden !flex-[0_0_auto]"
-          property1="secondary"
-        />
+        <Button className="hidden !flex-[0_0_auto]" property1="secondary" />
         <button
-          className="md:inline-flex hidden px-[14px] py-[10px] inline-flex h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border cursor-pointer"
+          className="hidden px-[14px] py-[10px] h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border cursor-pointer"
           onClick={toggleModal}
         >
-          <div className="relative w-fit font-semibold text-[#ffffff] text-[18px] tracking-[0] leading-[normal]">
+          <div className="hidden first-letter:relative w-fit font-semibold text-[#ffffff] text-[18px] tracking-[0] leading-[normal]">
             Sign in
           </div>
           {showModal && <Modal />}
