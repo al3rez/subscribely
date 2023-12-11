@@ -2,11 +2,23 @@ import { sql } from "@vercel/postgres";
 
 export const Listings = async ({ searchParams }) => {
   const category = searchParams.category || "All";
+  const query = searchParams.q || "";
 
   // handle the "All" category
   const categoryQuery = category === "All" ? "%" : category;
-  const { rows } =
-    await sql`SELECT * FROM listings where category like ${categoryQuery} order by tag asc`;
+  const searchQuery = `%${query}%`;
+
+  let rows = [];
+  if (categoryQuery === "%" && searchQuery === "%%") {
+    const { rows: allRows } = await sql`select * from listings`;
+    rows = allRows;
+  } else {
+    const { rows: allRows } = await sql`
+      select * from listings where category like ${categoryQuery} and (title ilike ${searchQuery} or description ilike ${searchQuery})
+    `;
+    rows = allRows;
+  }
+
   const colors = {
     ad: {
       bg: "bg-bg",

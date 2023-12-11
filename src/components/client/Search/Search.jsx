@@ -1,14 +1,23 @@
 "use client";
 
-import React from "react";
-import { useReducer } from "react";
+import React, { useReducer } from "react";
 import { Search1 } from "../../../icons/Search1";
 import { X1 } from "../../../icons/X1";
+import { useRouter } from "next/navigation";
 
 export const Search = ({ property1, className }) => {
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "default",
   });
+  const router = useRouter();
+
+  const handleSearchClick = () => {
+    const query = document.querySelector("#searchInput").innerHTML;
+    localStorage.setItem("q", query);
+
+    const category = localStorage.getItem("category", "All");
+    router.push(`/?q=${query}&category=${category}`);
+  };
 
   return (
     <div
@@ -23,11 +32,14 @@ export const Search = ({ property1, className }) => {
         dispatch("mouse_leave");
       }}
     >
-      <Search1 className="!w-[20px] !h-[20px]" color="white" />
+      <div onClick={handleSearchClick}>
+        <Search1 className="!w-[20px] !h-[20px]" color="white" />
+      </div>
       <div
+        id="searchInput"
         className="flex-1 bg-transparent text-white border-none resize-none outline-none mx-2"
         placeholder="Flow |"
-        contenteditable="true"
+        contentEditable={true}
         data-placeholder="Search"
       ></div>
       <X1 className="!w-[13px] !h-[13px]" />

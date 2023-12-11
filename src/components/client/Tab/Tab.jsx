@@ -15,7 +15,10 @@ export const Tab = ({
   const router = useRouter();
 
   const handleTabClick = () => {
-    router.push(`/?category=${text}`);
+    localStorage.setItem("category", text);
+
+    const query = localStorage.getItem("q", "");
+    router.push(`/?q=${query}&category=${text}`);
   };
 
   // Determine the background color based on the isSelected prop
