@@ -15,8 +15,8 @@ export const Search = ({ property1, className }) => {
     const query = document.querySelector("#searchInput").innerHTML;
     localStorage.setItem("q", query);
 
-    const category = localStorage.getItem("category", "All");
-    router.push(`/?q=${query}&category=${category}`);
+    const category = localStorage.getItem("category");
+    router.push(`/?q=${query}&category=${category || "All"}`);
   };
 
   return (
