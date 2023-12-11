@@ -12,27 +12,7 @@ export const Search = ({ property1, className }) => {
 
   return (
     <div
-      className={`flex items-center relative w-[310px] rounded-[500px] gap-[6px] border border-solid ${
-        state.property1 === "hovered"
-          ? "border-gray-4"
-          : state.property1 === "focused"
-          ? "border-blue"
-          : "border-gray-3"
-      } ${
-        state.property1 === "focused"
-          ? "shadow-[0px_0px_0px_3px_#008cff66]"
-          : ""
-      } ${
-        state.property1 === "focused"
-          ? "pl-[12px] pr-[14px] py-[12px]"
-          : "p-[12px]"
-      } ${
-        state.property1 === "hovered"
-          ? "bg-gray-2"
-          : state.property1 === "focused"
-          ? "bg-[#181818]"
-          : "bg-gray-1"
-      } ${state.property1 === "focused" ? "overflow-hidden" : ""} ${className}`}
+      className={`inline-flex items-center w-[20%] h-[46px] rounded-[500px] justify-between relative cursor-pointer border border-solid border-gray-3 bg-gray-1 !flex-[0_0_auto] px-[12px]`}
       onMouseEnter={() => {
         dispatch("mouse_enter");
       }}
@@ -43,22 +23,14 @@ export const Search = ({ property1, className }) => {
         dispatch("mouse_leave");
       }}
     >
-      <Search1 className="!relative !w-[20px] !h-[20px]" color="white" />
-      {["default", "hovered"].includes(state.property1) && (
-        <div className="w-fit tracking-[0] text-[15px] text-gray-4 font-normal leading-[normal] whitespace-nowrap relative">
-          Search
-        </div>
-      )}
-
-      {state.property1 === "focused" && (
-        <>
-          <p className="relative flex-1 mt-[-0.50px] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]">
-            <span className="font-medium text-[#ffffff]">Flow</span>
-            <span className="font-bold text-[#008cff]">|</span>
-          </p>
-          <X1 className="!relative !w-[13px] !h-[13px]" />
-        </>
-      )}
+      <Search1 className="!w-[20px] !h-[20px]" color="white" />
+      <div
+        className="flex-1 bg-transparent text-white border-none resize-none outline-none mx-2"
+        placeholder="Flow |"
+        contenteditable="true"
+        data-placeholder="Search"
+      ></div>
+      <X1 className="!w-[13px] !h-[13px]" />
     </div>
   );
 };

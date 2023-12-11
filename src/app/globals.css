@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   .all-\[unset\] {
     all: unset;
@@ -19,9 +18,14 @@
   --white: rgba(255, 255, 255, 1);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 body {
   background-color: var(--bg);
   color: var(--white);
+}
+
+[contentEditable="true"]:empty:before {
+  content: attr(data-placeholder);
+  color: gray;
 }
