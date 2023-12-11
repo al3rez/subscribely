@@ -6,7 +6,7 @@ export const Listings = async ({ searchParams }) => {
   // handle the "All" category
   const categoryQuery = category === "All" ? "%" : category;
   const { rows } =
-    await sql`SELECT * FROM listings where category like ${categoryQuery} order by id asc`;
+    await sql`SELECT * FROM listings where category like ${categoryQuery} order by tag asc`;
   const colors = {
     ad: {
       bg: "bg-bg",
