@@ -21,7 +21,7 @@ export const Search = ({ property1, className }) => {
 
   return (
     <div
-      className={`inline-flex items-center w-[20%] h-[46px] rounded-[500px] justify-between relative cursor-pointer border border-solid border-gray-3 bg-gray-1 !flex-[0_0_auto] px-[12px]`}
+      className={`inline-flex items-center w-[20%] h-[46px] rounded-[500px] justify-between relative cursor-pointer border border-solid border-gray-3 bg-gray-1 !flex-[0_0_auto] px-[12px] ${className}`}
       onMouseEnter={() => {
         dispatch("mouse_enter");
       }}

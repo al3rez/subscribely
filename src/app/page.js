@@ -16,7 +16,7 @@ export default async function Home({ searchParams }) {
     <div className={inter.className}>
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
       <main className="w-[80%] mt-[44px] mx-auto">
-        <h1 className="font-bold text-white text-[2rem] tracking-normal leading-normal">
+        <h1 className="font-bold text-white text-[2rem] leading-[2rem]">
           <span className="hidden md:inline-block">👉</span> Fantastic
           Productized Services
         </h1>
@@ -29,8 +29,10 @@ export default async function Home({ searchParams }) {
           <div className="mt-[47px] font-medium text-gray-4 text-[16px] tracking-[0] leading-[normal]">
             Choose a category
           </div>
-          <div className="flex items-center justify-between gap-[10px] mt-[16px]">
-            <div className={`flex gap-[10px] ${inter.className}`}>
+          <div className="flex flex-wrap items-center justify-between gap-[10px] mt-[16px]">
+            <div
+              className={`flex gap-[10px] ${inter.className} overflow-x-scroll`}
+            >
               <Tab
                 isSelected={
                   searchParams.category === "All" ||
@@ -45,14 +47,12 @@ export default async function Home({ searchParams }) {
               <Tab
                 isSelected={searchParams.category === "Design"}
                 className="!flex-[0_0_auto]"
-                divClassName="hidden md:inline-flex"
                 property1="default"
                 text="Design"
               />
               <Tab
                 isSelected={searchParams.category === "Development"}
                 className="!flex-[0_0_auto]"
-                divClassName="hidden md:inline-flex"
                 icon={<CodeFill className="!relative !w-[20px] !h-[20px]" />}
                 property1="default"
                 text="Development"
@@ -60,7 +60,6 @@ export default async function Home({ searchParams }) {
               <Tab
                 isSelected={searchParams.category === "Sales and Marketing"}
                 className="!flex-[0_0_auto]"
-                divClassName="hidden md:inline-flex"
                 icon={
                   <MegaphoneSimpleFill className="!relative !w-[20px] !h-[20px]" />
                 }
@@ -68,7 +67,7 @@ export default async function Home({ searchParams }) {
                 text="Sales and Marketing"
               />
             </div>
-            <Search className="hidden md:inline-flex" property1="default" />
+            <Search className="w-[300px]" property1="default" />
           </div>
           <Listings searchParams={searchParams}></Listings>
         </div>
