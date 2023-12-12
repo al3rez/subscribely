@@ -37,7 +37,7 @@ export const Search = ({ property1, className }) => {
       </div>
       <div
         id="searchInput"
-        className="flex-1 bg-transparent text-white border-none resize-none outline-none mx-2"
+        className="flex-1 bg-transparent text-white border-none resize-none outline-none mx-2 cursor-text"
         placeholder="Flow |"
         contentEditable={true}
         data-placeholder="Search"
