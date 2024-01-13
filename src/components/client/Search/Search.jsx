@@ -12,11 +12,25 @@ export const Search = ({ property1, className }) => {
   const router = useRouter();
 
   const handleSearchClick = () => {
-    const query = document.querySelector("#searchInput").innerHTML;
-    localStorage.setItem("q", query);
+    localStorage.clear();
 
-    const category = localStorage.getItem("category");
-    router.push(`/?q=${query}&category=${category || "All"}`);
+    const query = document.querySelector("#searchInput").innerText.trim();
+    if (query) {
+      localStorage.setItem("q", query);
+    }
+
+    const category = localStorage.getItem("category") || "All";
+    let url = "/?";
+
+    if (query.length > 0) {
+      url += `q=${query}`;
+    }
+
+    if (category) {
+      url += query ? `&category=${category}` : `category=${category}`;
+    }
+
+    router.push(url);
   };
 
   return (

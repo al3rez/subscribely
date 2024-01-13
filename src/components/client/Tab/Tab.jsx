@@ -18,7 +18,14 @@ export const Tab = ({
     localStorage.setItem("category", text);
 
     const query = localStorage.getItem("q", "");
-    router.push(`/?q=${query}&category=${text}`);
+    let url = "/?";
+
+    if (query) {
+      url += `q=${query}&`;
+    }
+
+    url += `category=${text}`;
+    router.push(url);
   };
 
   // Determine the background color based on the isSelected prop
