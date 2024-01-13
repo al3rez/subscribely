@@ -10,6 +10,7 @@ export const Button = ({
   className,
   text = "Submit Tool",
   link,
+  onClick,
 }) => {
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "primary",
@@ -18,6 +19,7 @@ export const Button = ({
   return (
     <a
       href={link}
+      onClick={onClick}
       className={`inline-flex items-center gap-[6px] h-[44px] rounded-[500px] justify-center relative cursor-pointer ${
         state.property1 === "primary-hovered"
           ? "[background:linear-gradient(180deg,rgb(236.95,113.03,255)_0%,rgb(0,140,255)_100%)]"
@@ -30,8 +32,8 @@ export const Button = ({
         state.property1 === "secondary"
           ? "border-gray-3"
           : state.property1 === "secondary-hovered"
-          ? "border-gray-4"
-          : ""
+            ? "border-gray-4"
+            : ""
       } ${
         ["secondary-hovered", "secondary"].includes(state.property1)
           ? "px-[16px] py-[10px]"
@@ -40,8 +42,8 @@ export const Button = ({
         state.property1 === "primary"
           ? "bg-[#f089ff]"
           : state.property1 === "secondary-hovered"
-          ? "bg-gray-2"
-          : ""
+            ? "bg-gray-2"
+            : ""
       } ${className}`}
       onMouseEnter={() => {
         dispatch("mouse_enter");

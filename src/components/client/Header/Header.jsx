@@ -8,12 +8,30 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 import React, { useState } from "react";
 import { Modal } from "@/components/client/Modal";
 import { Button } from "../Button";
+import { Close } from "@/components/client/Modal/Close";
+
+const Notice = ({ onClick }) => (
+  <div
+    className="!absolute flex left-[20rem] items-center justify-between gap-2 bg-green-400 bg-opacity-10 py-[9px] rounded-full text-xs font-semibold px-5 text-green-400 cursor-pointer"
+    onClick={onClick}
+  >
+    <span className="text-md">
+      Congrats! You succesfully submitted your listing.
+    </span>
+    <Close className="h-2 !fill-green-400 cusror-pointer" />
+  </div>
+);
 
 export const Header = ({ className }) => {
   const [showModal, setShowModal] = useState(false);
+  const [showNotice, setShowNotice] = useState(false);
 
   const toggleModal = () => {
     setShowModal(!showModal);
+  };
+
+  const toggleNotice = () => {
+    setShowNotice(!showNotice);
   };
 
   return (
@@ -34,22 +52,16 @@ export const Header = ({ className }) => {
       </div>
       <div className="flex items-start justify-end gap-[10px] top-[12px] mr-[25px]">
         <Button
+          onClick={toggleModal}
           className="!flex-[0_0_auto]"
           property1="primary"
           text="Submit Website"
-          link="https://dqeweieu0xx.typeform.com/to/gIUWPCEH"
         />
-        <Button className="hidden !flex-[0_0_auto]" property1="secondary" />
-        <button
-          className="hidden px-[14px] py-[10px] h-[44px] items-center justify-center gap-[6px] relative flex-[0_0_auto] rounded-[500px] all-[unset] box-border cursor-pointer"
-          onClick={toggleModal}
-        >
-          <div className="hidden first-letter:relative w-fit font-semibold text-[#ffffff] text-[18px] tracking-[0] leading-[normal]">
-            Sign in
-          </div>
-          {showModal && <Modal />}
-        </button>
+        {showModal && (
+          <Modal onClick={toggleModal} setShowNotice={setShowNotice} />
+        )}
       </div>
+      {showNotice && <Notice onClick={toggleNotice} />}
     </div>
   );
 };
