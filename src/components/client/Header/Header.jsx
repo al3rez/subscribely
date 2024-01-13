@@ -12,13 +12,13 @@ import { Close } from "@/components/client/Modal/Close";
 
 const Notice = ({ onClick }) => (
   <div
-    className="!absolute flex left-[20rem] items-center justify-between gap-2 bg-green-400 bg-opacity-10 py-[9px] rounded-full text-xs font-semibold px-5 text-green-400 cursor-pointer"
+    className="!fixed bottom-5 right-5 flex items-center justify-between gap-2 bg-green-400 bg-opacity-10 z-1000 py-5 rounded-md text-sm px-5 text-green-400 cursor-pointer"
     onClick={onClick}
   >
     <span className="text-md">
       Congrats! You succesfully submitted your listing.
     </span>
-    <Close className="h-2 !fill-green-400 cusror-pointer" />
+    <Close className="h-[10px] !fill-green-400 cusror-pointer" />
   </div>
 );
 
@@ -35,33 +35,35 @@ export const Header = ({ className }) => {
   };
 
   return (
-    <div
-      className={`flex items-center justify-between h-[70px] bg-gray-1 border-b [border-bottom-style:solid] border-[#262525] ${className}`}
-    >
-      <div className="flex">
-        <div className="absolute top-[18px] left-[75px] font-semibold text-[#ffffff] text-[24px] tracking-[0] leading-[normal] md:block hidden">
-          Subscribely.
-        </div>
-        <div className="absolute w-[42px] h-[40px] top-[14px] left-[24px]">
-          <div className="relative w-[40px] h-[40px] bg-[#008cff] rounded-[8.79px]">
-            <div className="absolute w-[25px] top-[3px] left-[10px] font-bold text-[#ffffff] text-[28px] tracking-[-2.24px] leading-[normal]">
-              S.
+    <>
+      <div
+        className={`flex items-center justify-between h-[70px] bg-gray-1 border-b [border-bottom-style:solid] border-[#262525] ${className}`}
+      >
+        <div className="flex">
+          <div className="absolute top-[18px] left-[75px] font-semibold text-[#ffffff] text-[24px] tracking-[0] leading-[normal] md:block hidden">
+            Subscribely.
+          </div>
+          <div className="absolute w-[42px] h-[40px] top-[14px] left-[24px]">
+            <div className="relative w-[40px] h-[40px] bg-[#008cff] rounded-[8.79px]">
+              <div className="absolute w-[25px] top-[3px] left-[10px] font-bold text-[#ffffff] text-[28px] tracking-[-2.24px] leading-[normal]">
+                S.
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex items-start justify-end gap-[10px] top-[12px] mr-[25px]">
-        <Button
-          onClick={toggleModal}
-          className="!flex-[0_0_auto]"
-          property1="primary"
-          text="Submit Website"
-        />
-        {showModal && (
-          <Modal onClick={toggleModal} setShowNotice={setShowNotice} />
-        )}
+        <div className="flex items-start justify-end gap-[10px] top-[12px] mr-[25px]">
+          <Button
+            onClick={toggleModal}
+            className="!flex-[0_0_auto]"
+            property1="primary"
+            text="Submit Website"
+          />
+          {showModal && (
+            <Modal onClick={toggleModal} setShowNotice={setShowNotice} />
+          )}
+        </div>
       </div>
       {showNotice && <Notice onClick={toggleNotice} />}
-    </div>
+    </>
   );
 };
