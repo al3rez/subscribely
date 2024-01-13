@@ -10,21 +10,29 @@ import { Modal } from "@/components/client/Modal";
 import { Button } from "../Button";
 import { Close } from "@/components/client/Modal/Close";
 
-const Notice = ({ onClick }) => (
-  <div
-    className="!fixed bottom-5 right-5 flex items-center justify-between gap-2 bg-green-400 bg-opacity-10 z-1000 py-5 rounded-md text-sm px-5 text-green-400 cursor-pointer"
-    onClick={onClick}
-  >
-    <span className="text-md">
-      Congrats! You succesfully submitted your listing.
-    </span>
-    <Close className="h-[10px] !fill-green-400 cusror-pointer" />
-  </div>
-);
+const Notice = ({ message, onClick }) => {
+  const isError = message.status === "error";
+
+  // Determine the background and text color classes based on isError
+  const bgColorClass = isError
+    ? "bg-red-400 text-red-600"
+    : "bg-green-400 text-green-600";
+  const fillColorClass = isError ? "!fill-red-600" : "!fill-green-600";
+
+  return (
+    <div
+      className={`!fixed bottom-5 right-5 flex items-center justify-between gap-2 ${bgColorClass} bg-opacity-10 z-1000 py-5 rounded-md text-sm px-5 cursor-pointer`}
+      onClick={onClick}
+    >
+      <span className="text-md">{message.message}</span>
+      <Close className={`h-[10px] ${fillColorClass} cursor-pointer`} />
+    </div>
+  );
+};
 
 export const Header = ({ className }) => {
   const [showModal, setShowModal] = useState(false);
-  const [showNotice, setShowNotice] = useState(false);
+  const [showNotice, setShowNotice] = useState({});
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -63,7 +71,7 @@ export const Header = ({ className }) => {
           )}
         </div>
       </div>
-      {showNotice && <Notice onClick={toggleNotice} />}
+      {showNotice && <Notice onClick={toggleNotice} message={showNotice} />}
     </>
   );
 };

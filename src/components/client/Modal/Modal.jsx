@@ -11,26 +11,31 @@ export const Modal = ({ className, onClick, setShowNotice }) => {
           onClick={onClick}
         />
         <div className="[font-family:'Inter-Bold',Helvetica] font-bold text-[#ffffff] text-[36px] text-center tracking-[0] leading-[normal]">
-          List your website!
+          📝 List your website!
         </div>
 
         <form
           className="flex flex-col gap-5 my-10 w-[398px]"
-          action={createListing}
-          onSubmit={() => {
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const message = await createListing(formData);
+            setShowNotice(message);
             onClick();
-            setShowNotice(true);
+            e.target.disabled = true;
           }}
         >
           <input
-            name="email"
-            className="rounded-full bg-gray-1 border border-gray-3 py-[9px] px-5 placeholder:text-gray-4"
-            placeholder="Website URL..."
-          />
-          <input
             name="website_url"
             className="rounded-full bg-gray-1 border border-gray-3 py-[9px] px-5 placeholder:text-gray-4"
+            placeholder="Website URL..."
+            type="url"
+          />
+          <input
+            name="email"
+            className="rounded-full bg-gray-1 border border-gray-3 py-[9px] px-5 placeholder:text-gray-4"
             placeholder="Your email"
+            type="email"
           />
 
           <button

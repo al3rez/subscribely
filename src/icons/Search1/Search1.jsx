@@ -22,7 +22,13 @@ export const Search1 = ({ color = "black", className }) => {
         strokeLinejoin="round"
         strokeWidth="2"
       />
-      <path d="M17.5 17.5L13.875 13.875" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path
+        d="M17.5 17.5L13.875 13.875"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
     </svg>
   );
 };
