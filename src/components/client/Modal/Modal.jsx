@@ -42,7 +42,7 @@ export const Modal = ({ className, onClick, setShowNotice }) => {
             type="submit"
             className="rounded-full py-[9px] px-5 bg-[#f089ff] text-black font-bold"
           >
-            Submit
+            Pay $2 → Submit
           </button>
         </form>
       </div>
