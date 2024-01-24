@@ -17,8 +17,7 @@ export default async function Home({ searchParams }) {
       <Header className="![border-right-style:none] ![border-top-style:none] ![border-left-style:none]" />
       <main className="w-[80%] mt-[44px] mx-auto">
         <h1 className="font-bold text-white text-[2rem] leading-[2rem]">
-          <span className="hidden md:inline-block">👉</span> Fantastic
-          Productized Services
+          Subscription services vetted by real humans!
         </h1>
         <div className="w-[100%] mt-[13px] mx-auto">
           <p className="w-[100%] left-[310px] font-normal text-gray-4  text-[1.2rem] tracking-[0] leading-[30px] md:text-[1.5rem] md:w-[664px] break-words">
