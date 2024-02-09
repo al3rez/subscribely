@@ -1,4 +1,4 @@
-Subscribely
+# Subscribely
 
 This a directory-tool I published a while ago, which lists productized services and it's vetted by humans like you and me! 
 
